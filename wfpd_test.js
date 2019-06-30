@@ -1,3 +1,5 @@
+const Nominatim = require('nominatim-geocoder');
+const geocoder = new Nominatim();
 const fb = require("./firebase.js");
 const request = require( 'request' );
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
@@ -35,7 +37,16 @@ var options = { url     : "https://iam.bluemix.net/oidc/token",
 //firebase test
 const getCoords = (data) =>
 {
-	console.log(data);	
+	console.log(data);
+	if (data['address']){
+		geocoder.search( { q: data['address'] } )
+    		.then((response) => {
+        		console.log(response)
+    		})
+    		.catch((error) => {
+        		console.log(error)
+    		})
+	}	
 }
 
 fb.fbGet('users', getCoords);
