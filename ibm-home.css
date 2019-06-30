@@ -1,0 +1,182 @@
+.nav-wrapper {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.521);
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   display: flex;
+   align-items: center;
+}
+
+.nav {
+display: flex; 
+
+}
+
+.nav a {
+    text-decoration: none;
+    margin-right: 10%;
+    margin-left: 40%;
+    color: white;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    transition:0.5s;
+
+}
+
+.nav a:hover { 
+    letter-spacing: 1px;
+    color: #cea135; 
+
+}
+
+
+
+
+.content {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+}
+
+.opening-stat { 
+    margin-top: 20px;
+}
+
+.search-bar {
+    margin-top: 20px;
+    display: flex;
+    align-items: top;
+    height: 20px;
+   
+}
+
+.location-icon a {
+    color: red;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 335px;
+    left: 890px;
+}
+
+#search { 
+    width: 500px;
+    height: 5px;
+}
+
+h4, h3, h1, h2 {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+h1{
+    font-size: 3rem;
+    color: #ffc43a;
+    text-shadow: 2px 2px #000000;
+    letter-spacing: 2px;
+
+
+}
+
+h3 {
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+ font-weight: 600;
+
+}
+
+h4 {
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+ font-weight: 300; 
+}
+
+body { 
+    background-image: url("one-photo.jpg");
+    
+}
+
+body img { 
+width: 100%;
+object-fit: contain;
+}
+
+
+
+html, body {
+    height:70%;
+} 
+
+body {
+    background-color: white;
+    background-image: url('one-photo.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+
+
+input {
+background: white;
+border-radius: 1000px;
+    font-size: 1.3rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border: none;
+    width: 100%;
+    display: block; 
+    transition: all 0.3s;
+    color:rgba(0, 0, 0, 0.74);
+    }
+
+    input:focus  {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba(0,0 0, 0, 0.1);
+        border-bottom: 3px solid #ffc43a;
+        
+    }
+
+    input::-webkit-input-placeholder {
+        color:   #00000069; 
+        letter-spacing: 1px;
+        font-family: 'Open Sans', sans-serif;
+        text-transform: lowercase;
+        font-size: 1rem;
+
+    
+
+    }
+
+    input:focus::-webkit-input-placeholder{
+        color: transparent;
+    }
+
+    label {
+        font-size: 1rem;
+        font-weight: 300;
+        margin-left: 2rem;
+        margin-top: 0.7rem;
+        display: block;
+        transition: all 0.3s;
+        color: #ffffff; 
+        visibility: hidden;
+        opacity: 0;
+        font-family: 'Open Sans', sans-serif;
+
+    }
+
+    input:focus + label, .form textarea:focus + label {
+        opacity: 1;
+        visibility: visible;
+        transform: translatey(1rem);
+    }

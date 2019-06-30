@@ -1,0 +1,250 @@
+/* nav css  */
+.nav-wrapper {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    opacity: 10;
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   display: flex;
+   align-items: center;
+}
+
+.nav {
+display: flex; 
+
+}
+
+.nav a {
+    text-decoration: none;
+    margin-right: 10%;
+    margin-left: 40%;
+    color: white;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    transition:0.5s;
+
+}
+
+.nav a:hover { 
+    letter-spacing: 1px;
+    color: #cea135; 
+
+}
+
+/* body content */
+.content {
+    margin-top: 110px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.content-left { 
+
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    grid-gap: 20px;
+    
+}
+
+
+
+.phone { 
+    width: 600px;
+    height: 100px;
+    display: flex;
+}
+
+
+.phone-right {
+    position: fixed;
+    left: 255px;
+    top: 175px;
+   
+}
+
+.tips {
+    width: 600px;
+    height: 400px;
+}
+
+.content-right { 
+    height: 500px;
+}
+
+.map {
+    height: 500px;
+}
+
+/* text  */
+h4, h3, h1, h2 {
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+ font-weight: 600;
+
+}
+
+h4 {
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+ font-weight: 300; 
+}
+
+
+
+.drop-down-affordance {
+    line-height: 25px;
+    font-size: 0.8em;
+font-family: 'Open Sans', sans-serif;
+}
+/* content left */
+.outcome {
+    
+        position: fixed;
+        top: 40px;
+        left: 60px;
+        display: flex;
+        align-items: center;
+}
+
+.bad-outcome-icon {
+    color: rgb(255, 0, 0); 
+    margin-left: 20px
+}
+
+.affordance-phone {
+    position: fixed; 
+    left: 60px;
+    top: 130px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+
+
+}
+
+
+
+
+/* phone number input css */
+
+input {
+    left: 60px;
+    margin-left: 60px;
+    margin-top: 50px;
+    background: transparent;
+    
+    border-radius: 1000px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: inherit;
+    height: 10px;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border: none;
+    border-bottom: solid 3px black;
+    width: 110px;
+    display: block; 
+    transition: all 0.3s;
+        }
+    
+        input:focus  {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba(0,0 0, 0, 0.1);
+            border-bottom: 3px solid #ffc43a;
+            
+        }
+    
+        input::-webkit-input-placeholder {
+            color:   #00000069; 
+            letter-spacing: 1px;
+    
+        }
+    
+        input:focus::-webkit-input-placeholder{
+            color: transparent;
+        }
+    
+        label {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-left: 50px;
+            display: block;
+            transition: all 0.3s;
+            color: #000000; 
+            visibility: hidden;
+            opacity: 0;
+            font-family: 'Open Sans', sans-serif;
+    
+        }
+    
+        input:focus + label, .form textarea:focus + label {
+            opacity: 1;
+            visibility: visible;
+            transform: translatey(-0.5rem);
+        }
+    
+        .tips { 
+            display: flex;
+            padding-left: 20px;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .tip 
+     {
+         width: 250px;
+         display: flex;
+         flex-direction: column;
+         margin-right: 20px;
+         height: 300px;
+         background-color: #ffc43a;
+         font-family: 'Open Sans', sans-serif;
+         border-radius: 20px;
+     }
+
+
+
+     .tip-icon {
+         text-align: center;
+         margin-bottom: 50px;
+         font-size: 2em;
+         color: white;
+         margin-top: 25px;
+     }
+
+     
+     .tip-text { 
+         font-size: 0.9em;
+         padding-left: 20px;
+         padding-right: 20px;
+     }
+
+     /* button */
+
+     button { 
+         font-size: 1.5em;
+         text-decoration: none;
+border: 0px;     }
+
+         button:focus {
+             outline:0;}
+
+
+     
+     button:active {
+         color: green; 
+     }
