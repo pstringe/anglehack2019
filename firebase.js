@@ -32,19 +32,6 @@ var data = {
 */
 
 /*
-** update firebase using, passing in  
-*/
-
-exports.fbUpdate = function(field, data) {
-	db.collection(field).doc().set(data).then(function() {
-			console.log("ok");
-		}).catch(function(error){
-
-		console.log("problem");
-	});
-},
-
-/*
 ** get data from firebase, pass in field
 */
 
@@ -58,9 +45,9 @@ exports.fbGet = function(field, callback) {
 	})
 },
 
-exports.fbUpdate= function(field, key, value) {
-	const id = "8BYyMD3ewCC21qzir2dE";
-
+exports.fbUpdate= function(field, id, key, value) {
+	console.log(id);
+	console.log(db.collection(field).doc());
 	db.collection("users").doc(id).update({
 			key : value
 		}).then(function() {

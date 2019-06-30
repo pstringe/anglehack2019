@@ -33,15 +33,26 @@ var options = { url     : "https://iam.bluemix.net/oidc/token",
                             "Authorization" : "Basic " + btoa( IBM_Cloud_IAM_uid + ":" + IBM_Cloud_IAM_pwd ) },
                 body    : "apikey=" + apikey + "&grant_type=urn:ibm:params:oauth:grant-type:apikey" };
 
+/*
+** callback funciton to perform geocoding and update longitude and lattitude
+** if user has address on file
+*/
 
-//firebase test
+var lat = 0;
+var lng = 0;
+
 const getCoords = (data) =>
 {
 	console.log(data);
 	if (data['address']){
 		geocoder.search( { q: data['address'] } )
     		.then((response) => {
+			lat = response.lat;
+			lng = response.long;
         		console.log(response)
+			console.log(data);
+			//fb.fbUpdate('users', data.id, "lon", 2);
+			//fb.fbUpdate('users', data.id, "lat", 2);
     		})
     		.catch((error) => {
         		console.log(error)
@@ -49,7 +60,9 @@ const getCoords = (data) =>
 	}	
 }
 
+//retrive users form firebase and update longitude/lattidude
 fb.fbGet('users', getCoords);
+
 request.post( options, function( error, response, body )
 {
 	const iam_token = JSON.parse( body )["access_token"];
@@ -58,8 +71,6 @@ request.post( options, function( error, response, body )
 	// NOTE: retrieve ml_instance_id based on provided documentation
 	const mlInstanceId = "da659b8f-3d24-4093-adad-203aa0038f97";
 
-	var lat = 21.98713;
-	var lng = -79.30634;
 	// NOTE: manually define and pass the array(s) of values to be scored in the next line
 	var payload = '{"fields": ["latitude", "longitude"], "values": [[' + lat + ',' + lng + ']]}';
 	const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/da659b8f-3d24-4093-adad-203aa0038f97/deployments/07f97798-a45b-4f7e-9150-3542fbd5103d/online";
