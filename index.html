@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/d8cad9fc05.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ibm-media-queries.css">
+
+
+
+    <link rel="stylesheet" href="ibm-home.css">
+    <title>IBM Wildfire Challenge</title>
+</head>
+<body>
+<div class="nav-wrapper">
+    <div class="nav">
+        <div class="nav-home">
+            <a href="index.html">Home
+            </a>
+        </div>
+        <div class="nav-home">
+                <a href="https://smokeybear.com/en/about-wildland-fire?gclid=Cj0KCQjwu-HoBRD5ARIsAPIPencZYAW2XjjF7vgtFVfMKAwejNrW3v0PdpwvjffDdjbLcRMGZ_fDgLAaAmfOEALw_wcB" target="_blank">Resources
+                    </a>
+            </div>
+
+    </div>
+</div>
+
+<div class="content">
+        <div class="opening-header">
+               <h1>Is your home safe?</h1> 
+        </div>
+            
+        <div class="opening-stat">
+                   <h3> More than 2 million homes in California are identified as high risk of a wildfire. </h3> 
+
+         </div>
+
+          
+        <div class="search-bar">
+            <div class="form">
+                    <input type="text" id="search" placeholder="Enter your addres, city or zip code ">
+                    <label for="text"> Insert your address to determine if your area is prone to wildfires </label>
+            </div>
+            <div class="location-icon">
+                    <a href="take-action.html"><i class="fas fa-map-marker-alt"></i></a> 
+            </div>
+            
+            
+        </div>
+</div>
+
+<script>
+    function activatePlacesSearch () {
+        var input = document.getElementById ('search');
+        var autocomplete = new google.maps.places.Autocomplete (input);
+    }
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOQTo5k8lqXUaDD4kUSBkEO9AoocO1EU0&libraries=places&callback=activatePlacesSearch"></script>
+</body>
+</html>
+
+<!--  -->

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/d8cad9fc05.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="ibm-action.css">
+    <title>IBM Wildfire Challenge</title>
+</head>
+<body>
+<div class="nav-wrapper">
+    <div class="nav">
+        <div class="nav-home">
+            <a href="index.html">Home
+            </a>
+        </div>
+        <div class="nav-home">
+                <a href="https://smokeybear.com/en/about-wildland-fire?gclid=Cj0KCQjwu-HoBRD5ARIsAPIPencZYAW2XjjF7vgtFVfMKAwejNrW3v0PdpwvjffDdjbLcRMGZ_fDgLAaAmfOEALw_wcB" target="_blank">Resources
+
+                </a>
+            </div>
+
+    </div>
+</div>
+<div class="outcome">
+        <h2>Your area is prone to wildfires</h2> 
+        <div class="bad-outcome-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+        </div>
+ </div>
+<div class="content">
+    
+    <div class="content-left">
+                <div class="affordance-phone">
+                        Sign up to receive tips and alerts to stay safe this wildfire season 
+                        
+                </div>
+                    <div class="phone">
+                       <div class="phone-left">
+                            <input type="phone" id="phone-number" placeholder="000-000-0000">
+                            <label for="phone" class="drop-down-affordance"> <h5>Type in your phone number to stay updated <br> 000-000-0000</h5></label>
+                       </div>
+                       <div class="phone-right">
+                           <button class="btn-sign-up"> <i class="far fa-check-circle"></i> 
+                           </button>
+                       </div>
+                           
+                    </div>
+        <div class="tips">
+            <div class="tip">
+                <div class="tip-icon"><i class="fas fa-seedling"></i></div>
+                <div class="tip-text">
+                Tree branches should be ten feet apart and the home should be clear of dead 
+                    <ul>
+                        <li> plants</li>
+                        <li> grass</li>
+                        <li> dry leaves and pine needles</li>
+
+                    </ul> 
+                </div>
+            </div>
+                            
+            <div class="tip">
+                <div class="tip-icon"><i class="fas fa-ruler-vertical"></i></div>
+                <div class="tip-text">
+                Grass should be kept to a maximum of four inches high.
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+      
+    <div class="content-right">
+        <iframe class="map" src="https://www.google.com/maps/d/embed?mid=1jfZgNpNIxgNK-KBeburT0LQ5mmOZuew7" width="640" height="480"></iframe>
+    </div>
+          
+    </div>
+      
+  
+
+
+</div>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+ 
+
+<!--  button java  -->
+
+<script type="text/javascript">
+    var firebaseConfig = {
+    apiKey: "AIzaSyDfkuoYNCDdurtDvCp0EchV9BzM6DioStE",
+    authDomain: "angel-hck.firebaseapp.com",
+    databaseURL: "https://angel-hck.firebaseio.c",
+    projectId: "angel-hck",
+    storageBucket: "",
+    messagingSenderId: "922124163750",
+    appId: "1:922124163750:web:514e5537a3bc73f5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+    var signUp = document.querySelector(".btn-sign-up");
+    signUp.addEventListener("click", function() {
+        let value = document.querySelector("#phone-number").value;
+        const data = {
+            "phone": value,
+            "lat": "9999",
+            "long": "9999",
+            "risk": 73,
+        }
+        db.collection("users").doc().set(data).then(function() {
+                alert("sign up successful!")
+          }).catch(function(error){
+              console.log("problem");
+          })
+    });
+</script>
+
+</body>
+</html>
