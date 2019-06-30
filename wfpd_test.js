@@ -44,18 +44,20 @@ var lng = 0;
 const getCoords = (data) =>
 {
 	console.log(data);
+
 	if (data['address']){
 		geocoder.search( { q: data['address'] } )
     		.then((response) => {
-			lat = response.lat;
-			lng = response.lon;
-			
+			lat = response[0].lat;
+			lng = response[0].lon;
+			console.log(lat);
+			console.log(lng);	
         		console.log("in callback");
-			console.log(response)
+			console.log(response);
 			console.log(data);
     		})
     		.catch((error) => {
-        		console.log(error)
+        		console.log(error);
     		})
 	}	
 }
