@@ -15,6 +15,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 var exports = module.exports = { };
+
 /*
 ** example data schema
 */
@@ -30,6 +31,14 @@ var data = {
 	"tojo1":15,     
 }
 */
+
+exports.fbInsert = function(field, data){
+	db.collection(field).doc().set(data).then(function() {
+		console.log("ok");
+	}).catch(function(error){
+		console.log("problem");
+	})
+}
 
 /*
 ** get data from firebase, pass in field

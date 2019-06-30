@@ -48,11 +48,11 @@ const getCoords = (data) =>
 		geocoder.search( { q: data['address'] } )
     		.then((response) => {
 			lat = response.lat;
-			lng = response.long;
-        		console.log(response)
+			lng = response.lon;
+			
+        		console.log("in callback");
+			console.log(response)
 			console.log(data);
-			//fb.fbUpdate('users', data.id, "lon", 2);
-			//fb.fbUpdate('users', data.id, "lat", 2);
     		})
     		.catch((error) => {
         		console.log(error)
