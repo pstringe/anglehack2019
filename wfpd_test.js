@@ -1,3 +1,4 @@
+const fb = require("./firebase.js");
 const request = require( 'request' );
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const btoa = require("btoa");
@@ -31,6 +32,13 @@ var options = { url     : "https://iam.bluemix.net/oidc/token",
                 body    : "apikey=" + apikey + "&grant_type=urn:ibm:params:oauth:grant-type:apikey" };
 
 
+//firebase test
+const getCoords = (data) =>
+{
+	console.log(data);	
+}
+
+fb.fbGet('users', getCoords);
 request.post( options, function( error, response, body )
 {
 	const iam_token = JSON.parse( body )["access_token"];
